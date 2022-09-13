@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   class mobile{
+       constructor(pin,name,status) {
+           this.pin=pin;
+           this.name=name;
+           this.status=status;
+           this.editor=[];
+           this.den=[];
+           this.sent=[];
+       }
+       trangThai(){
+           if (this.status === 'tắt'){
+               console.log(" cần bật diên thoại lên")
+           }else if (this.status === 'bật'){
+               console.log('điện thoại đang bật')
+           }
+       }
+       test(){
+           if (this.status === 'bật'){
+                console.log('đã bật')
+           }else if (this.status === 'tắt'){
+              console.log('đang tắt')
+           }
+       }
+       charger(){
+           if (this.pin < 20 && this.status ==='tắt') {
+               console.log('Cần bật máy mới sạc được')
+           }else if (this.pin>20 && this.status === 'bật') {
+               console.log('còn tốt không cần sạc')
+           }
+       }
+       soanTinNhan(tinnhan) {
+                console.log( this.name +  ' đang soạn ' + tinnhan )
+           this.editor.push(tinnhan)
+           --this.pin
+           console.log(this.name + ' còn ' + this.pin + '% pin ')
+       }
+       thuDen(dienthoaiobj){
+                dienthoaiobj.den.push(this.den)
+                console.log(this.name + ' đã nhận tin nhắn từ ' + dienthoaiobj.name)
+            console.log()
+
+       }
+       thuGui(){
+                this.sent.push(this.editor)
+           console.log(' thư đã gửi là : ' + this.sent )
+           --this.pin
+                console.log(' Pin còn ' + this.pin +'%')
+       }
+
+   }
+   let nokia=new mobile(28,'nokia','bật')
+   let iphone=new mobile(60,'iphone','bật')
+    nokia.trangThai()
+    nokia.test()
+    nokia.charger()
+    nokia.soanTinNhan('xin chào')
+    nokia.thuDen(iphone)
+    nokia.thuGui()
+</script>
+</body>
+</html>

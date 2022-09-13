@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Curency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="c"></td>
+        <td><select name="" id="viet">
+            <option value="a">VNĐ</option>
+            <option value="b">USD</option>
+        </select></td>
+        <td>
+            <select name="" id="salec">
+                <option value="a">VND</option>
+                <option value="b">USD</option>
+            </select>
+            <td><button onclick="doitien()">Convert</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function doitien() {
+        let dauvao = document.getElementById('c').value;
+        let viet = document.getElementById('viet').value;
+        if ( viet === 'a'){
+            var c=dauvao/23000;
+            alert(c);
+        }
+        else {var c=23000*dauvao}
+        alert(c);
+
+
+    }
+</script>
+
+</body>
+</html>
